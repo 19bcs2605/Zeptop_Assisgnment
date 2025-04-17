@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Upload and Query</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload CSV File</h1>
+        <form action="/csv/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".csv" required>
+            <button type="submit">Upload</button>
+        </form>
+
+        <h2>Run SQL Queries</h2>
+        <form action="/csv/query" method="post">
+            <textarea name="query" rows="4" cols="50" placeholder="Enter your SQL query here..." required></textarea>
+            <button type="submit">Execute Query</button>
+        </form>
+
+        <h2>Query Results</h2>
+        <div id="query-results">
+            <!-- Results will be displayed here -->
+        </div>
+    </div>
+</body>
+</html>
